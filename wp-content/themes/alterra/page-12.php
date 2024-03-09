@@ -266,7 +266,7 @@ get_header();
                     </div>
                 </div>
             </div>
-            <div class="cases swiper" data-aos="fade-up">
+            <div class="cases swiper swiper-case" data-aos="fade-up">
                 <div class="heading-title border-heading-title">CASES</div>
                 <div class="grid-list swiper-wrapper">
                     <?php
@@ -296,7 +296,7 @@ get_header();
                     <?php endif; ?>
                 </div>
             </div>
-            <div class="members swiper-member" data-aos="fade-up">
+            <div class="members swiper swiper-member" data-aos="fade-up" id="swiper2">
                 <div class="heading-title border-heading-title">MEMBER</div>
                 <div class="grid-list swiper-wrapper">
                     <?php
