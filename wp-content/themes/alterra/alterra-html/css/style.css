@@ -27,7 +27,9 @@ body {
   margin: 0 auto; }
 
 .banner {
-  padding: 344px 0; }
+  display: flex;
+  align-items: center;
+  height: 855px; }
   .banner .logo {
     text-align: center;
     margin: 0 auto;
@@ -362,6 +364,8 @@ body {
       border-bottom: 1px solid var(--black); }
     .about-us .content .content__right {
       padding-top: 30px; }
+      .about-us .content .content__right .contact-us-title {
+        display: inline-block; }
       .about-us .content .content__right .form .form-item-line {
         margin-bottom: 30px; }
         .about-us .content .content__right .form .form-item-line.name-row {
