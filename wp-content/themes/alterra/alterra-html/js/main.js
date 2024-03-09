@@ -24,7 +24,7 @@ const swiperCase = new Swiper(".swiper-case", {
     slidesPerView: 4,
     spaceBetween: "25px",
     breakpoints: {
-        390: {
+        374: {
             slidesPerView: 1.5,
         },
         600: {
@@ -53,7 +53,7 @@ const swiperMember = new Swiper(".swiper-member", {
     slidesPerView: 2,
     spaceBetween: "100px",
     breakpoints: {
-        390: {
+        374: {
             slidesPerView: 1,
         },
         600: {

@@ -176,8 +176,7 @@
     padding: 0 10px; }
     .proof-country .grid-list {
       display: flex;
-      flex-direction: column;
-      align-items: center; }
+      flex-direction: column; }
     .proof-country .title {
       font-size: 13px;
       font-weight: 600;
