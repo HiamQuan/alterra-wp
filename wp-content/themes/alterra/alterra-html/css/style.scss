@@ -21,6 +21,7 @@ $color: #000000;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
     &::before,
     &::after {
         box-sizing: border-box;
@@ -43,28 +44,36 @@ body {
 }
 
 .banner {
-    padding: 344px 0;
+    display: flex;
+    align-items: center;
+    height: 855px;
+
     .logo {
         text-align: center;
         margin: 0 auto;
         max-width: 530px;
+
         .first-line {
             font-size: 90px;
             font-family: $fontInter;
             line-height: 108.92px;
+
             span {
                 font-size: 50px;
                 line-height: 39.84px;
             }
         }
+
         .second-line {
             margin-top: 5px;
             display: flex;
             justify-content: space-between;
             align-items: center;
             font-weight: 400;
+
             span {
                 font-size: 34px;
+
                 &:last-child {
                     padding-right: 40px;
                 }
@@ -76,6 +85,7 @@ body {
 .main {
     background: #f1f3f8;
     padding-top: 116px;
+
     .container {
         max-width: 1200px;
         margin: 0 auto;
@@ -87,6 +97,7 @@ body {
     display: grid;
     grid-template-columns: 46% auto;
     gap: 10vw;
+
     .left {
         padding-bottom: 50px;
 
@@ -98,20 +109,24 @@ body {
                 font-weight: $fontBold;
                 line-height: 24px;
             }
+
             p {
                 margin-top: 28px;
                 font-size: 16px;
                 line-height: 20px;
                 padding-right: 5px;
+
                 &:last-child {
                     margin-top: 25px;
                 }
             }
         }
+
         .our-business {
             margin-top: 115px;
         }
     }
+
     .right {
         .sticky-box {
             position: sticky;
@@ -125,8 +140,10 @@ body {
     grid-template-columns: repeat(3, 1fr);
     gap: 11.5%;
     margin-top: 26px;
+
     .item {
         text-align: center;
+
         .title {
             width: 90%;
             margin: 0 auto;
@@ -136,6 +153,7 @@ body {
             border-bottom: 2px solid $color;
             padding: 6px;
         }
+
         .tag {
             font-family: $fontYuGothic;
             font-size: 16px;
@@ -143,6 +161,7 @@ body {
             line-height: 20px;
             margin-top: 11px;
         }
+
         .text {
             font-family: $fontNoto;
             font-weight: 400;
@@ -156,22 +175,27 @@ body {
 
 .our-service {
     margin-top: 139px;
+
     .sub-title {
         margin-top: 31px;
         font-size: 20px;
         line-height: 23.44px;
     }
+
     .service-grid {
         margin-top: 34px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 85px;
+
         .item {
             overflow: hidden;
             border-radius: 16px;
             box-shadow: rgba(40, 40, 40, 0.226) 2px 2px 5px 0px, var(--white) -5px -5px 16px 0px;
+
             .content {
                 padding: 0 17px;
+
                 .title {
                     margin: 17px 0 15px 0;
                     font-weight: 700;
@@ -179,10 +203,12 @@ body {
                     line-height: 24.61px;
                     letter-spacing: 0;
                 }
+
                 .tags {
                     display: flex;
                     align-items: center;
                     gap: 2px;
+
                     .tag {
                         display: flex;
                         justify-content: center;
@@ -196,23 +222,28 @@ body {
                         padding: 0 7px;
                         height: 24px;
                         line-height: 100%;
+
                         &:first-child {
                             font-size: 9px;
                         }
                     }
                 }
+
                 .text {
                     margin-top: 19px;
                     font-weight: 400;
                     font-size: 12px;
                     line-height: 20px;
                     padding-right: 5px;
+
                     span {
                         font-size: 13px;
                     }
                 }
+
                 .technoloy-list {
                     margin-top: 20px;
+
                     .list-item {
                         padding: 12px 0;
                         border-top: 1px solid #3c41c2;
@@ -228,11 +259,13 @@ body {
 
 .proof-country {
     margin-top: 140px;
+
     .title {
         font-weight: 700;
         font-size: 21px;
         line-height: 24.61px;
     }
+
     .grid-list {
         display: grid;
         grid-template-columns: repeat(5, 1fr);
@@ -250,62 +283,71 @@ body {
             "./imgs/taiwan.jpg",
             "./imgs/shanghai.jpg"
         );
-        @for $i from 0 to length($imgUrls) {
-            .item:nth-child(#{$i + 1}) {
-                background-image: url(unquote(nth($imgUrls, $i + 1)));
-                background-size: cover;
-                background-repeat: no-repeat;
-            }
+
+    @for $i from 0 to length($imgUrls) {
+        .item:nth-child(#{$i + 1}) {
+            background-image: url(unquote(nth($imgUrls, $i + 1)));
+            background-size: cover;
+            background-repeat: no-repeat;
         }
-        .item {
-            position: relative;
+    }
+
+    .item {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 147px;
+        border-radius: 8px;
+        overflow: hidden;
+
+        span {
             display: flex;
             justify-content: center;
             align-items: center;
-            height: 147px;
-            border-radius: 8px;
-            overflow: hidden;
-            span {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: var(--white);
-                z-index: 10;
-                font-family: $fontInter;
-                font-size: 13px;
-                font-weight: 700;
-                line-height: 15.73px;
-                width: 100%;
-                height: 100%;
-                backdrop-filter: brightness(70%);
-            }
+            color: var(--white);
+            z-index: 10;
+            font-family: $fontInter;
+            font-size: 13px;
+            font-weight: 700;
+            line-height: 15.73px;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: brightness(70%);
         }
     }
+}
 }
 
 .cases {
     margin-top: 120px;
+
     .grid-list {
         .item {
             margin-bottom: 10px;
             border-radius: 16px;
             box-shadow: rgba(40, 40, 40, 0.148) 4px 3px 4px 0px, var(--white) -5px -5px 16px 0px;
+
             .content {
                 padding: 10px 25px 22px 18px;
+
                 .title {
                     font-weight: 700;
                     font-size: 13px;
                     line-height: 15.23px;
                     letter-spacing: 0;
+
                     span {
                         font-weight: 600;
                     }
                 }
+
                 .text {
                     margin-top: 19px;
                     font-weight: 500;
                     font-size: 12px;
                     line-height: 20px;
+
                     span {
                         font-weight: 400;
                         font-size: 13px;
@@ -318,15 +360,18 @@ body {
 
 .members {
     margin-top: 120px;
+
     .grid-list {
         .item {
             padding: 28px 35px 40px 30px;
             border-radius: 16px;
             box-shadow: rgba(40, 40, 40, 0.148) 4px 3px 4px 0px, var(--white) -5px -5px 16px 0px;
+
             .profile-row {
                 display: flex;
                 align-items: center;
                 gap: 4%;
+
                 .avatar {
                     border-radius: 50%;
                     overflow: hidden;
@@ -335,16 +380,19 @@ body {
                     width: 80px;
                     height: 80px;
                 }
+
                 .information {
                     display: flex;
                     flex-direction: column;
                     justify-content: center;
+
                     .position {
                         font-family: $fontRoboto;
                         font-weight: 600;
                         font-size: 20px;
                         line-height: 23.44px;
                     }
+
                     .name {
                         font-family: $fontInter;
                         font-weight: 700;
@@ -353,6 +401,7 @@ body {
                     }
                 }
             }
+
             .description {
                 margin-top: 23px;
                 font-weight: 400;
@@ -365,13 +414,16 @@ body {
 
 .news {
     margin-top: 120px;
+
     .grid-list {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 2.333%;
+
         .item {
             position: relative;
             margin-top: 50px;
+
             .created-at {
                 display: flex;
                 align-items: center;
@@ -380,30 +432,36 @@ body {
                 font-family: $fontYuGothic !important;
                 font-weight: 700 !important;
                 margin-bottom: 20px;
+
                 span {
                     font-size: 10px;
                 }
             }
+
             .content {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 gap: 13px;
+
                 .cover {
                     border-radius: 8px;
                     overflow: hidden;
                     max-width: 70px;
                 }
+
                 .main-content {
                     .title {
                         font-size: 14px;
                         font-weight: 700;
                         line-height: 18px;
                     }
+
                     .description {
                         display: none;
                     }
                 }
+
                 .link {
                     margin-left: 20px;
                     vertical-align: middle;
@@ -418,10 +476,12 @@ body {
 
 .about-us {
     margin-top: 120px;
+
     .content {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 8%;
+
         .content__left {
             .item {
                 display: grid;
@@ -432,16 +492,24 @@ body {
                 border-bottom: 1px solid var(--black);
             }
         }
+
         .content__right {
             padding-top: 30px;
+
+            .contact-us-title {
+                display: inline-block;
+            }
+
             .form {
                 .form-item-line {
                     margin-bottom: 30px;
+
                     &.name-row {
                         display: grid;
                         grid-template-columns: 1fr 1fr;
                         gap: 5%;
                     }
+
                     input {
                         margin-top: 5px;
                         width: 100%;
@@ -451,6 +519,7 @@ body {
                         background: transparent;
                         padding: 0 10px;
                     }
+
                     textarea {
                         margin-top: 5px;
                         width: 100%;
@@ -471,6 +540,7 @@ body {
                     justify-content: center;
                     background: linear-gradient(90deg, #7196cc 0%, #6eb5b7 100%);
                     border-radius: 8px;
+
                     input {
                         font-size: 16px;
                         font-weight: 500;
@@ -609,6 +679,7 @@ body {
     display: inline-block;
     padding: 25px 0 23px 0;
     overflow: hidden;
+
     &::before,
     &::after {
         position: absolute;
@@ -622,9 +693,11 @@ body {
         opacity: 1;
         transition: opacity 0.75s 0.25s, transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.25s;
     }
+
     &::before {
         transform: translateX(6rem);
     }
+
     &::after {
         transform: translateX(calc(-100% + 7.9rem));
     }

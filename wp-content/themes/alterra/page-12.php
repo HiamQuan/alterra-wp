@@ -464,6 +464,7 @@ get_header();
                         </div>
                     </div>
                     <div class="content__right" data-aos="fade-up">
+                        <div class="contact-us-title heading-title border-heading-title">CONTACT US</div>
                         <?php echo do_shortcode( '[contact-form-7 id="2b28a9e" title="Contact Form Alterra"]' ); ?>
                     </div>
                 </div>
