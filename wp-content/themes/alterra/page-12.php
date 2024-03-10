@@ -337,97 +337,68 @@ get_header();
             <div class="news" data-aos="fade-up">
                 <div class="heading-title border-heading-title">NEWS</div>
                 <div class="grid-list">
+                    <?php
+                        $news = get_posts(array(
+                            'post_type'  => 'news',
+                        ));
+
+                    if ($news) : ?>
+                    <?php foreach ($news as $each) :
+                        setup_postdata($each);
+                    ?>
                     <div class="item top-news__item-link">
                         <div class="created-at">
                             <span>⚫️︎</span>2024.01.10
                         </div>
                         <div class="content">
                             <div class="cover">
-                                <img src="<?php bloginfo('template_directory'); ?>/alterra-html/imgs/news.jpg" alt=""
-                                    class="img-fluid">
+                                <?php if(get_field('image', $each->ID)): ?>
+                                <img src="<?php echo esc_url(get_field('image', $each->ID)) ?>" alt="image"
+                                    class="img-fluid" />
+                                <?php endif; ?>
+                                <div class="image" style="background-image: url(<?php get_field('image', $each->ID) ?>)"></div>
                             </div>
                             <div class="main-content">
                                 <div class="title">
-                                    ALTERRAは、ベトナムのリソースを活かした高レベル/低価格の開発力と、東南アジアを中心としたグ
+                                    <?php the_field('title', $each->ID) ?>
                                 </div>
                                 <div class="description">
-                                    ALTERRAは、ベトナムのリソースを活かした高レベル/低価格の開発力と、東南アジアを中心としたグローバルノウハウ、そして柔軟なマーケティングスキルを融合し、ビジネ...
+                                    <?php if(get_field('content', $each->ID)): ?>
+                                    <?php the_field('content', $each->ID) ?>
+                                    <?php endif; ?>
                                 </div>
-                            </div>
-                            <div class="link">
-                                <span class="top-news__item-icon">
-                                    <span class="_icon">
-                                        <svg width="67" height="75" viewBox="0 0 67 75" aria-hidden="true">
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M-0.003,34.088 L59.632,34.088 L59.632,41.541 L-0.003,41.541 L-0.003,34.088 Z">
-                                            </path>
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M29.814,0.917 L66.711,37.814 L61.440,43.085 L24.543,6.188 L29.814,0.917 Z">
-                                            </path>
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M66.711,37.814 L29.814,74.711 L24.543,69.440 L61.440,32.543 L66.711,37.814 Z">
-                                            </path>
-                                        </svg><svg width="67" height="75" viewBox="0 0 67 75" aria-hidden="true">
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M-0.003,34.088 L59.632,34.088 L59.632,41.541 L-0.003,41.541 L-0.003,34.088 Z">
-                                            </path>
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M29.814,0.917 L66.711,37.814 L61.440,43.085 L24.543,6.188 L29.814,0.917 Z">
-                                            </path>
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M66.711,37.814 L29.814,74.711 L24.543,69.440 L61.440,32.543 L66.711,37.814 Z">
-                                            </path>
-                                        </svg> </span>
-                                </span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item top-news__item-link">
-                        <div class="created-at">
-                            <span>⚫️︎</span>2024.01.10
-                        </div>
-                        <div class="content">
-                            <div class="cover">
-                                <img src="<?php bloginfo('template_directory'); ?>/alterra-html/imgs/news.jpg" alt=""
-                                    class="img-fluid">
-                            </div>
-                            <div class="main-content">
-                                <div class="title">
-                                    ALTERRAは、ベトナムのリソースを活かした高レベル/低価格の開発力と、東南アジアを中心としたグ
-                                </div>
-                                <div class="description">
-                                    ALTERRAは、ベトナムのリソースを活かした高レベル/低価格の開発力と、東南アジアを中心としたグローバルノウハウ、そして柔軟なマーケティングスキルを融合し、ビジネ...
-                                </div>
-                            </div>
-                            <div class="link">
-                                <span class="top-news__item-icon">
-                                    <span class="_icon">
-                                        <svg width="67" height="75" viewBox="0 0 67 75" aria-hidden="true">
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M-0.003,34.088 L59.632,34.088 L59.632,41.541 L-0.003,41.541 L-0.003,34.088 Z">
-                                            </path>
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M29.814,0.917 L66.711,37.814 L61.440,43.085 L24.543,6.188 L29.814,0.917 Z">
-                                            </path>
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M66.711,37.814 L29.814,74.711 L24.543,69.440 L61.440,32.543 L66.711,37.814 Z">
-                                            </path>
-                                        </svg><svg width="67" height="75" viewBox="0 0 67 75" aria-hidden="true">
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M-0.003,34.088 L59.632,34.088 L59.632,41.541 L-0.003,41.541 L-0.003,34.088 Z">
-                                            </path>
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M29.814,0.917 L66.711,37.814 L61.440,43.085 L24.543,6.188 L29.814,0.917 Z">
-                                            </path>
-                                            <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
-                                                d="M66.711,37.814 L29.814,74.711 L24.543,69.440 L61.440,32.543 L66.711,37.814 Z">
-                                            </path>
-                                        </svg>
+                                <a class="link" href="<?php the_field('url', $each->ID) ?>">
+                                    <span class="top-news__item-icon">
+                                        <span class="_icon">
+                                            <svg width="67" height="75" viewBox="0 0 67 75" aria-hidden="true">
+                                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                    d="M-0.003,34.088 L59.632,34.088 L59.632,41.541 L-0.003,41.541 L-0.003,34.088 Z">
+                                                </path>
+                                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                    d="M29.814,0.917 L66.711,37.814 L61.440,43.085 L24.543,6.188 L29.814,0.917 Z">
+                                                </path>
+                                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                    d="M66.711,37.814 L29.814,74.711 L24.543,69.440 L61.440,32.543 L66.711,37.814 Z">
+                                                </path>
+                                            </svg><svg width="67" height="75" viewBox="0 0 67 75" aria-hidden="true">
+                                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                    d="M-0.003,34.088 L59.632,34.088 L59.632,41.541 L-0.003,41.541 L-0.003,34.088 Z">
+                                                </path>
+                                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                    d="M29.814,0.917 L66.711,37.814 L61.440,43.085 L24.543,6.188 L29.814,0.917 Z">
+                                                </path>
+                                                <path fill-rule="evenodd" fill="rgb(255, 255, 255)"
+                                                    d="M66.711,37.814 L29.814,74.711 L24.543,69.440 L61.440,32.543 L66.711,37.814 Z">
+                                                </path>
+                                            </svg> </span>
                                     </span>
-                                </span>
+                                </a>
                             </div>
                         </div>
                     </div>
+                    <?php endforeach; ?>
+                    <?php wp_reset_postdata(); ?>
+                    <?php endif; ?>
                 </div>
             </div>
             <!-- News-->
