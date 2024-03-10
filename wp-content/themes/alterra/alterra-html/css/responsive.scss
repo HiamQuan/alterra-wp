@@ -200,6 +200,12 @@
             }
         }
     }
+    .about-us {
+        .content {
+            display: flex;
+            flex-direction: column;
+        }
+    }
 }
 
 @media only screen and (max-width: 390px) {
