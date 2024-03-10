@@ -55,19 +55,35 @@
 @media only screen and (min-width: 900px) and (max-width: 1200px) {
     .banner {
         .logo {
-            .first-line {
-                font-size: 5vw;
+            .first-column {
+                span {
+                    &:first-child {
+                        font-size: 5vw;
+                        line-height: 29.05px;
+                    }
+                    &:last-child {
+                        font-size: 2vw;
+                        line-height: 19.36px;
+                    }
+                }
+            }
 
+            .center-column {
                 span {
                     font-size: 3vw;
                 }
             }
 
-            .second-line {
-                justify-content: space-around;
-
+            .second-column {
                 span {
-                    font-size: 2vw;
+                    &:first-child {
+                        font-size: 5vw;
+                        line-height: 29.05px;
+                    }
+                    &:last-child {
+                        font-size: 2vw;
+                        line-height: 19.36px;
+                    }
                 }
             }
         }
@@ -111,20 +127,37 @@
 @media only screen and (min-width: 374px) and (max-width: 899px) {
     .banner {
         .logo {
-            .first-line {
-                font-size: 7vw;
-
+            gap: 17px;
+            .first-column {
                 span {
-                    font-size: 5vw;
+                    &:first-child {
+                        font-size: 7vw;
+                        line-height: 29.05px;
+                    }
+                    &:last-child {
+                        font-size: 3vw;
+                        line-height: 19.36px;
+                    }
                 }
             }
 
-            .second-line {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-
+            .center-column {
                 span {
-                    font-size: 3vw;
+                    font-size: 5vw !important;
+                    line-height: 29.05px !important;
+                }
+            }
+
+            .second-column {
+                span {
+                    &:first-child {
+                        font-size: 7vw;
+                        line-height: 29.05px;
+                    }
+                    &:last-child {
+                        font-size: 3vw;
+                        line-height: 19.36px;
+                    }
                 }
             }
         }
@@ -211,25 +244,6 @@
 @media only screen and (max-width: 390px) {
     .banner {
         height: 593px;
-
-        .logo {
-            .first-line {
-                font-size: 7vw;
-
-                span {
-                    font-size: 5vw;
-                }
-            }
-
-            .second-line {
-                display: grid;
-                grid-template-columns: repeat(2, 1fr);
-
-                span {
-                    font-size: 5vw;
-                }
-            }
-        }
     }
 
     .container {
@@ -246,6 +260,11 @@
 
         .left {
             max-width: 375px;
+            .our-mission {
+                p {
+                    margin-top: 8px !important;
+                }
+            }
         }
     }
 
@@ -254,11 +273,9 @@
     }
 
     .our-business {
-
         .title,
         p,
         .sub-title {
-            width: calc(100% - 30px);
             font-size: 13px !important;
         }
     }
@@ -282,8 +299,12 @@
 
     .our-service {
         padding: 0 10px;
+        .sub-title {
+            font-size: 14px;
+        }
 
         .service-grid {
+            margin-top: 18px;
             display: flex;
             flex-direction: column;
             gap: 35px;
@@ -317,12 +338,10 @@
 
     .cases {
         padding: 0 10px;
-
     }
 
     .members {
         padding: 0 10px;
-
     }
 
     .news {
@@ -336,9 +355,8 @@
 
         .grid-list:last-child {
             padding-bottom: 10px;
-            border-bottom: 1.42px solid #1a1a1a;
+            border-bottom: 1px solid #1a1a1a;
         }
-
     }
 
     .about-us {
@@ -349,7 +367,7 @@
         }
 
         .content {
-            grid-template-columns: 1fr
+            grid-template-columns: 1fr;
         }
     }
 }

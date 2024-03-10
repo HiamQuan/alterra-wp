@@ -49,33 +49,61 @@ body {
     height: 855px;
 
     .logo {
-        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: 52px;
         margin: 0 auto;
         max-width: 530px;
 
-        .first-line {
-            font-size: 90px;
-            font-family: $fontInter;
-            line-height: 108.92px;
+        .first-column {
+            display: flex;
+            flex-direction: column;
 
             span {
-                font-size: 50px;
-                line-height: 39.84px;
+                &:first-child {
+                    font-family: $fontInter;
+                    font-size: 90px;
+                    font-weight: 700;
+                    line-height: 108.92px;
+                }
+                &:last-child {
+                    font-size: 34px;
+                    line-height: 39.84px;
+                }
             }
         }
 
-        .second-line {
-            margin-top: 5px;
+        .center-column {
             display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-weight: 400;
+            flex-direction: column;
 
             span {
-                font-size: 34px;
-
+                &:first-child {
+                    font-family: $fontInter;
+                    font-weight: 400;
+                    font-size: 50px;
+                    line-height: 108.92px;
+                }
                 &:last-child {
-                    padding-right: 40px;
+                    font-size: 34px;
+                    line-height: 39.84px;
+                }
+            }
+        }
+
+        .second-column {
+            display: flex;
+            flex-direction: column;
+
+            span {
+                &:first-child {
+                    font-size: 90px;
+                    font-weight: 700;
+                    line-height: 108.92px;
+                }
+                &:last-child {
+                    font-size: 34px;
+                    line-height: 39.84px;
                 }
             }
         }
@@ -284,44 +312,47 @@ body {
             "./imgs/shanghai.jpg"
         );
 
-    @for $i from 0 to length($imgUrls) {
-        .item:nth-child(#{$i + 1}) {
-            background-image: url(unquote(nth($imgUrls, $i + 1)));
-            background-size: cover;
-            background-repeat: no-repeat;
+        @for $i from 0 to length($imgUrls) {
+            .item:nth-child(#{$i + 1}) {
+                background-image: url(unquote(nth($imgUrls, $i + 1)));
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
         }
-    }
 
-    .item {
-        position: relative;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 147px;
-        border-radius: 8px;
-        overflow: hidden;
-
-        span {
+        .item {
+            position: relative;
             display: flex;
             justify-content: center;
             align-items: center;
-            color: var(--white);
-            z-index: 10;
-            font-family: $fontInter;
-            font-size: 13px;
-            font-weight: 700;
-            line-height: 15.73px;
-            width: 100%;
-            height: 100%;
-            backdrop-filter: brightness(70%);
+            height: 147px;
+            border-radius: 8px;
+            overflow: hidden;
+
+            span {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: var(--white);
+                z-index: 10;
+                font-family: $fontInter;
+                font-size: 13px;
+                font-weight: 700;
+                line-height: 15.73px;
+                width: 100%;
+                height: 100%;
+                backdrop-filter: brightness(70%);
+            }
         }
     }
-}
 }
 
 .cases {
     margin-top: 120px;
-
+    &.swiper {
+        padding-bottom: 20px;
+        padding-right: 20px;
+    }
     .grid-list {
         .item {
             margin-bottom: 10px;
@@ -360,6 +391,10 @@ body {
 
 .members {
     margin-top: 120px;
+    &.swiper {
+        padding-bottom: 20px;
+        padding-right: 20px;
+    }
 
     .grid-list {
         .item {

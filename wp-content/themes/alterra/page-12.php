@@ -18,11 +18,19 @@ get_header();
 <div class="container-fluid">
     <div class="banner">
         <div class="logo" data-aos="fade-up">
-            <h2 class="first-line">AL <span>✖️</span> TERRA</h2>
-            <p class="second-line">
+            <div class="first-column">
+                <span>AL</span>
                 <span>全て</span>
+            </div>
+            <div class="center-column">
+                <span>✖️</span>
+                <span>　</span>
+            </div>
+
+            <div class="second-column">
+                <span>TERRA</span>
                 <span>地球,テラバイト</span>
-            </p>
+            </div>
         </div>
     </div>
     <div class="main">
@@ -330,6 +338,27 @@ get_header();
                         </div>
                     </div>
                     <?php endforeach; ?>
+                    <div class="item swiper-slide">
+                        <div class="profile-row">
+                            <div class="avatar">
+                                <?php if(get_field('avatar', $member->ID)): ?>
+                                <img src="<?php echo esc_url(get_field('avatar', $member->ID)) ?>" alt="avatar"
+                                    class="img-fluid" />
+                                <?php endif; ?>
+                            </div>
+                            <div class="information">
+                                <div class="position">
+                                    <span><?php the_field('position', $member->ID) ?></span>
+                                </div>
+                                <div class="name">
+                                    <span><?php the_field('name', $member->ID) ?></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="description">
+                            <?php the_field('description', $member->ID) ?>
+                        </div>
+                    </div>
                     <?php wp_reset_postdata(); ?>
                     <?php endif; ?>
                 </div>
@@ -356,7 +385,8 @@ get_header();
                                 <img src="<?php echo esc_url(get_field('image', $each->ID)) ?>" alt="image"
                                     class="img-fluid" />
                                 <?php endif; ?>
-                                <div class="image" style="background-image: url(<?php get_field('image', $each->ID) ?>)"></div>
+                                <div class="image"
+                                    style="background-image: url(<?php get_field('image', $each->ID) ?>)"></div>
                             </div>
                             <div class="main-content">
                                 <div class="title">
@@ -367,7 +397,8 @@ get_header();
                                     <?php the_field('content', $each->ID) ?>
                                     <?php endif; ?>
                                 </div>
-                                <a class="link" href="<?php the_field('url', $each->ID) ?>">
+                            </div>
+                            <a class="link" href="<?php the_field('url', $each->ID) ?>">
                                     <span class="top-news__item-icon">
                                         <span class="_icon">
                                             <svg width="67" height="75" viewBox="0 0 67 75" aria-hidden="true">
@@ -393,7 +424,6 @@ get_header();
                                             </svg> </span>
                                     </span>
                                 </a>
-                            </div>
                         </div>
                     </div>
                     <?php endforeach; ?>
